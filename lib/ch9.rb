@@ -14,6 +14,10 @@ class Stack
   def read
     @data.last
   end
+
+  def empty?
+    @data.length.zero?
+  end
 end
 
 class Linter
@@ -88,4 +92,12 @@ class PrintManager
   def print_all_the_things
     puts(@queue.shift) until @queue.empty?
   end
+end
+
+def reverse_string(input)
+  stack = Stack.new
+  input.each_char { |c| stack.push(c) }
+  result = ''
+  result += stack.pop until stack.empty?
+  result
 end
