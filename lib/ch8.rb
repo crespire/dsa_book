@@ -1,3 +1,5 @@
+# Chapter 8 is on hash tables
+
 ##
 # #1
 # Write a function that returns the intersection of two arrays.
