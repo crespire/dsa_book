@@ -51,3 +51,41 @@ class Linter
     closer == { '{' => '}', '[' => ']', '(' => ')' }[opener]
   end
 end
+
+class MyQueue
+  def initialize
+    @data = []
+  end
+ 
+  def enqueue(element)
+    @data << element
+  end
+  alias add enqueue
+
+  def dequeue
+    @data.shift
+  end
+  alias shift dequeue
+
+  def read
+    @data.first
+  end
+
+  def empty?
+    @data.length.zero?
+  end
+end
+
+class PrintManager
+  def initialize
+    @queue = MyQueue.new
+  end
+
+  def add_job(document)
+    @queue.add(document)
+  end
+
+  def print_all_the_things
+    puts(@queue.shift) until @queue.empty?
+  end
+end
