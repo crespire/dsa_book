@@ -57,6 +57,7 @@ class Linter
 end
 
 class MyQueue
+  # Using a linked list instead of an array may provide additional performance
   def initialize
     @data = []
   end
