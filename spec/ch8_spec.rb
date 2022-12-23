@@ -9,6 +9,27 @@ RSpec.describe 'chapter 8' do
     end
   end
 
+  context 'exercise #2' do
+    it 'passes basic tests' do
+      expect(first_repeating_letter('a')).to eq('')
+      expect(first_repeating_letter('abcdcef')).to eq('c')
+      expect(first_repeating_letter('aaaaa')).to eq('a')
+      expect(first_repeating_letter('minimum')).to eq('i')
+      expect(first_repeating_letter('sTresS')).to eq('s')
+      expect(first_repeating_letter('MoOnmeN')).to eq('O')
+    end
+  end
+
+  context 'exercise #3' do
+    it 'passes basic tests' do
+      expect(missing_letter('abcdefghijklmnopqrstuvwxyz')).to eq('')
+      expect(missing_letter('The quick brown box jumps over the lazy dog')).to eq('f')
+      expect(missing_letter('abcdefghijklmnopqrtuvwxyz')).to eq('s')
+      expect(missing_letter('abcdefghijklmnopqrstuvwxy')).to eq('z')
+      expect(missing_letter('abcdefghijlmnopqrstuvwxyz')).to eq('k')
+    end
+  end
+
   context 'exercise #4' do
     it 'passes basic tests' do
       expect(first_non_repeating_letter('a')).to eq('a')
