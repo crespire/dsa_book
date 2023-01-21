@@ -34,4 +34,13 @@ RSpec.describe 'chapter 11' do
       expect(count_x('xxxxxxxxxx')).to eq(10)
     end
   end
+
+  context 'staircase problem' do
+    it 'passes basic tests' do
+      expect(paths_up(1)).to eq(1)
+      expect(paths_up(2)).to eq(2)
+      expect(paths_up(3)).to eq(4)
+      expect(paths_up(4)).to eq(7)
+    end
+  end
 end

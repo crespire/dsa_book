@@ -26,3 +26,11 @@ def count_x(string)
     count_x(string[1, string.length - 1])
   end
 end
+
+def paths_up(steps)
+  # jump of 3 possible
+  return 0 if steps.negative?
+  return 1 if steps.zero? || steps == 1
+
+  paths_up(steps - 1) + paths_up(steps - 2) + paths_up(steps - 3)
+end
