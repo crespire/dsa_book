@@ -34,3 +34,23 @@ def paths_up(steps)
 
   paths_up(steps - 1) + paths_up(steps - 2) + paths_up(steps - 3)
 end
+
+def anagrams_of(string)
+  return [string] if string.length == 1
+
+  collection = []
+  sub_anagrams = anagrams_of(string[1, string.length - 1])
+
+  sub_anagrams.each do |anagram|
+    # we do this style of loop because we want to insert after the string as
+    # well. For example, if string[0] is 'a' and sub_anagram is 'bc' we want to
+    # also be able to get 'bca', which involves inserting at index 2 which is
+    # the length of the string.
+    (0..anagram.length).each do |i|
+      copy = anagram.clone
+      collection << copy.insert(i, string[0])
+    end
+  end
+
+  collection
+end

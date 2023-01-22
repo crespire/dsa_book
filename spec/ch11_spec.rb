@@ -43,4 +43,12 @@ RSpec.describe 'chapter 11' do
       expect(paths_up(4)).to eq(7)
     end
   end
+
+  context 'anagram generator' do
+    it 'passes basic tests' do
+      expect(anagrams_of('ab')).to eq(%w[ab ba])
+      expect(anagrams_of('abc')).to eq(%w[abc bac bca acb cab cba])
+      expect(anagrams_of('abcdef')).to have_attributes(length: 720)
+    end
+  end
 end
