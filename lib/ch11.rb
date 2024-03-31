@@ -54,3 +54,41 @@ def anagrams_of(string)
 
   collection
 end
+
+# Exercises
+def character_counter(strings)
+  return 0 if strings.empty?
+
+  strings.first.length + character_counter(strings[1, strings.length - 1])
+end
+
+def evens_only(numbers)
+  return [] if numbers.empty?
+
+  if numbers.first.even?
+    [numbers.first] + evens_only(numbers[1, numbers.length - 1])
+  else
+    evens_only(numbers[1, numbers.length - 1])
+  end
+end
+
+def triangular(number)
+  return 0 if number.zero?
+  return 1 if number == 1
+
+  triangular(number - 1) + number
+end
+
+# Given constraint: Assume string always has at least 1 x
+# So no base case to get out if there is no x
+def first_x(string, index = 0)
+  return index if string[0].downcase == 'x'
+
+  first_x(string[1, string.length - 1], index + 1)
+end
+
+def unique_paths(rows, columns)
+  return 1 if rows == 1 || columns == 1
+
+  unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+end

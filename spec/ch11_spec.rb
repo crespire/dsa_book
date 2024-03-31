@@ -51,4 +51,50 @@ RSpec.describe 'chapter 11' do
       expect(anagrams_of('abcdef')).to have_attributes(length: 720)
     end
   end
+
+  context 'character_counter' do
+    it 'passes basic tests' do
+      expect(character_counter([])).to eq(0)
+      expect(character_counter(%w[ab c ab])).to eq(5)
+      expect(character_counter(%w[ab c def ghij])).to eq(10)
+    end
+  end
+
+  context 'evens only' do
+    it 'passes basic tests' do
+      expect(evens_only([1, 2])).to eq([2])
+      expect(evens_only([2, 4, 6])).to eq([2, 4, 6])
+      expect(evens_only([1, 3, 5])).to eq([])
+      expect(evens_only([])).to eq([])
+    end
+  end
+
+  context 'triangular number' do
+    it 'passes basic tests' do
+      expect(triangular(3)).to eq(6)
+      expect(triangular(7)).to eq(28)
+      expect(triangular(0)).to eq(0)
+      expect(triangular(1)).to eq(1)
+      expect(triangular(20)).to eq(210)
+    end
+  end
+
+  context 'first x' do
+    it 'passes basic tests' do
+      # Given constraint: Assume string always has at least 1 x
+      expect(first_x('x')).to eq(0)
+      expect(first_x('aax')).to eq(2)
+      expect(first_x('aaaxx')).to eq(3)
+      expect(first_x('abcdefghijklmnopqrstuvwxyz')).to eq(23)
+    end
+  end
+
+  context 'unique paths' do
+    it 'passes basic tests' do
+      expect(unique_paths(1, 1)).to eq(1)
+      expect(unique_paths(3, 2)).to eq(3)
+      expect(unique_paths(8, 3)).to eq(36)
+      expect(unique_paths(3, 7)).to eq(28)
+    end
+  end
 end
